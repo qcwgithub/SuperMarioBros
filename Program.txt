@@ -1,0 +1,73 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Drawing;
+
+namespace ConsoleApp7
+{
+    class Program
+    {
+
+        public class Line
+        {
+            public string line;
+            public string[] arr;
+            public double sum;
+        }
+        public static double ConvertToUnixTimestamp(DateTime date)
+        {
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            TimeSpan diff = date.ToUniversalTime() - origin;
+            return Math.Floor(diff.TotalSeconds);
+        }
+        static void Main(string[] args)
+        {
+            Bitmap img = new Bitmap("D:\\Code\\SuperMarioBros\\design-noextra.png");
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            //Console.Write(img.GetPixel(0, 291));
+            for (int i = 0; i < img.Width; i++)
+            {
+                for (int j = 0; j < img.Height; j++)
+                {
+                    Color pixel = img.GetPixel(i, j);
+                    if (pixel.R == 255 && pixel.G == 0 && pixel.B == 0)
+                    {
+                        continue;
+                    }
+                    string str = pixel.R + "_" + pixel.G + "_" + pixel.B;
+                    if (dict.ContainsKey(str))
+                        dict[str]++;
+                    else
+                        dict[str] = 1;
+                }
+            }
+            int total = 0;
+            foreach (var pair in dict)
+            {
+                total += pair.Value;
+                //string[] arr = pair.Key.Split("_".ToCharArray());
+                //Console.WriteLine(pair.Key + ": " + pair.Value);
+            }
+
+            List<KeyValuePair<string, int>> list = new List<KeyValuePair<string, int>>();
+            foreach (var pair in dict)
+                list.Add(pair);
+            list.Sort((a, b) => {
+                if (a.Value > b.Value) return -1;
+                if (a.Value < b.Value) return 1;
+                return 0;
+            });
+
+            Console.WriteLine();
+            foreach(var pair in list)
+            {
+                Console.WriteLine(pair.Key + ":\t" + pair.Value + "\t" + 100*((float)pair.Value/(float)total)+"%");
+            }
+            Console.WriteLine();
+            Console.WriteLine("total: "+total);
+        }
+    }
+}
