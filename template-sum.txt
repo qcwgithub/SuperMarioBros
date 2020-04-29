@@ -1,31 +1,32 @@
 brick.png       16x16   3
-cloud1.png      32x24   3        TOO BIG!
-cloud2.png      48x24   3        TOO BIG!
-cloud3.png      64x24   3        TOO BIG!
+cloud1.png      32x24   3        w 32>28!
+cloud2.png      48x24   3        w 48>28!
+cloud3.png      64x24   3        w 64>28!
 duck.png        15x24   3
 flag.png        21x27   4
 flower.png      16x12   3
 ground.png      16x24   3
 mario.png       12x16   3
-mario_b.png     15x44   2        TOO BIG!
-mario_o.png     15x44   2        TOO BIG!
-moutain1.png    48x19   2        TOO BIG!
-moutain2.png    80x35   2        TOO BIG!
+mario_b.png     15x44   2        h 44>40!
+mario_o.png     15x44   2        h 44>40!
+moutain1.png    48x19   2        w 48>28!
+moutain2.png    80x35   2        w 80>28!
 mush1.png       16x16   3
 mush2.png       16x16   3
 questionmark.png        16x16   3
 stair.png       16x16   3
-tree1.png       32x16   3        TOO BIG!
-tree3.png       63x16   3        TOO BIG!
-word_A.png      15x44   2        TOO BIG!
+tree1.png       32x16   3        w 32>28!
+tree3.png       63x16   3        w 63>28!
+word_A.png      15x44   2        h 44>40!
 word_dot.png    7x12    2
 word_dot2.png   3x3     3
 word_e.png      15x28   2
-word_i.png      7x44    2        TOO BIG!
-word_M.png      23x44   2        TOO BIG!
+word_i.png      7x44    2        h 44>40!
+word_M.png      23x44   2        h 44>40!
 word_p.png      15x28   2
 word_r.png      15x28   2
-word_r2.png     15x44   2        TOO BIG!
+word_r2.png     15x44   2        h 44>40!
 word_s.png      15x28   2
-word_s2.png     15x44   2        TOO BIG!
+word_s2.png     15x44   2        h 44>40!
 word_u.png      15x28   2
+请按任意键继续. . .
